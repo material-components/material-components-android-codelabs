@@ -1,3 +1,3 @@
-# MDC-101 for Material Components for Android (Kotlin)
+# MDC-102 for Material Components for Android (Kotlin)
 
-Contains complete code structure for the MDC-101 Kotlin codelab.
+Contains starter code structure for the MDC-102 Kotlin codelab.
