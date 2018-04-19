@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Shipping</string>
+    <string name="activity_label">Shipping Address</string>
+
+    <string name="label_name">Name</string>
+    <string name="label_address">Address</string>
+    <string name="label_city">City</string>
+    <string name="label_state">State</string>
+    <string name="label_zip">ZIP</string>
+    <string name="label_save">Save</string>
+
+    <string name="error_string">Field must not be empty.</string>
+</resources>
