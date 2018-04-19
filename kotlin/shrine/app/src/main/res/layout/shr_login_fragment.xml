@@ -33,9 +33,55 @@
             android:textAllCaps="true"
             android:textSize="16sp" />
 
-        <!-- Snippet from "Add text fields" section goes here. -->
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/shr_hint_username">
 
-        <!-- Snippet from "Add buttons" section goes here. -->
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1" />
+        </android.support.design.widget.TextInputLayout>
 
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/password_text_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/shr_hint_password"
+            app:errorEnabled="true">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/password_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+        </android.support.design.widget.TextInputLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.button.MaterialButton
+                android:id="@+id/next_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:text="@string/shr_button_next" />
+
+            <android.support.design.button.MaterialButton
+                android:id="@+id/cancel_button"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_toStartOf="@id/next_button"
+                android:layout_toLeftOf="@id/next_button"
+                android:text="@string/shr_button_cancel" />
+
+        </RelativeLayout>
     </LinearLayout>
 </ScrollView>
