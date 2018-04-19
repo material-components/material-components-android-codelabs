@@ -1,3 +1,3 @@
-# MDC-102 for Material Components for Android (Java)
+# MDC-103 for Material Components for Android (Java)
 
-Contains complete code structure for the MDC-102 Java codelab.
+Contains starter code structure for the MDC-103 Java codelab.
