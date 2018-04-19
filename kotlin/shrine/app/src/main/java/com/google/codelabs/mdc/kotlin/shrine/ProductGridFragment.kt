@@ -1,12 +1,15 @@
 package com.google.codelabs.mdc.kotlin.shrine
 
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AccelerateDecelerateInterpolator
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -28,6 +31,12 @@ class ProductGridFragment : Fragment() {
 
         // Set up the tool bar
         (activity as AppCompatActivity).setSupportActionBar(view.app_bar)
+        view.app_bar.setNavigationOnClickListener(NavigationIconClickListener(
+                activity!!,
+                view.product_grid,
+                AccelerateDecelerateInterpolator(),
+                ContextCompat.getDrawable(context!!, R.drawable.shr_branded_menu), // Menu open icon
+                ContextCompat.getDrawable(context!!, R.drawable.shr_close_menu))) // Menu close icon
 
         // Set up the RecyclerView
         view.recycler_view.setHasFixedSize(true)
@@ -45,7 +54,12 @@ class ProductGridFragment : Fragment() {
         val smallPadding = resources.getDimensionPixelSize(R.dimen.shr_staggered_product_grid_spacing_small)
         view.recycler_view.addItemDecoration(ProductGridItemDecoration(largePadding, smallPadding))
 
-        return view;
+        // Set cut corner background for API 23+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            view.product_grid.background = context?.getDrawable(R.drawable.shr_product_grid_background_shape)
+        }
+
+        return view
     }
 
     override fun onCreateOptionsMenu(menu: Menu, menuInflater: MenuInflater) {
