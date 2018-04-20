@@ -6,93 +6,106 @@
     android:layout_height="match_parent"
     tools:context=".ShippingInfoActivity">
 
-  <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:padding="16dp"
-      android:clipToPadding="false"
-      android:orientation="vertical">
-
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/name_text_input"
+    <android.support.design.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:errorEnabled="true">
+        android:layout_margin="16dp"
+        app:contentPadding="16dp">
 
-      <android.support.design.widget.TextInputEditText
-          android:id="@+id/name_edit_text"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:hint="@string/label_name"/>
-    </android.support.design.widget.TextInputLayout>
-
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/address_text_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:errorEnabled="true">
-
-      <android.support.design.widget.TextInputEditText
-          android:id="@+id/address_edit_text"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:hint="@string/label_address"/>
-    </android.support.design.widget.TextInputLayout>
-
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/city_text_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:errorEnabled="true">
-
-      <android.support.design.widget.TextInputEditText
-          android:id="@+id/city_edit_text"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:hint="@string/label_city"/>
-    </android.support.design.widget.TextInputLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-      <android.support.design.widget.TextInputLayout
-          android:id="@+id/state_text_input"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_weight=".5"
-          app:errorEnabled="true">
-
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/state_edit_text"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/label_state"/>
-      </android.support.design.widget.TextInputLayout>
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:padding="16dp">
 
-      <android.support.design.widget.TextInputLayout
-          android:id="@+id/zip_text_input"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_weight=".5"
-          app:errorEnabled="true">
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/name_text_input"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:errorEnabled="true">
 
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/zip_edit_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/label_zip"/>
-      </android.support.design.widget.TextInputLayout>
-    </LinearLayout>
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/name_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/label_name" />
+            </android.support.design.widget.TextInputLayout>
 
-    <Button
-        android:id="@+id/save_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_gravity="end"
-        android:text="@string/label_save"/>
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/address_text_input"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:errorEnabled="true">
 
-  </LinearLayout>
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/address_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/label_address" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/city_text_input"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:errorEnabled="true">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/city_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/label_city" />
+            </android.support.design.widget.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/state_text_input"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    app:errorEnabled="true">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/state_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/label_state" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/zip_text_input"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    app:errorEnabled="true">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/zip_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/label_zip" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <android.support.design.button.MaterialButton
+                android:id="@+id/save_button"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="16dp"
+                android:text="@string/label_save" />
+
+        </LinearLayout>
+    </android.support.design.card.MaterialCardView>
 </ScrollView>
