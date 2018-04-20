@@ -22,6 +22,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="48dp"
             android:layout_marginBottom="16dp"
+            android:tint="?android:attr/textColorPrimary"
             app:srcCompat="@drawable/shr_logo"
             android:contentDescription="@string/shr_logo_content_description"  />
 
@@ -31,10 +32,10 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="132dp"
             android:text="@string/shr_app_name"
-            android:textAllCaps="true"
-            android:textSize="16sp" />
+            android:textAppearance="@style/TextAppearance.Shrine.Title" />
 
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Shrine.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/shr_hint_username">
@@ -48,6 +49,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/password_text_input"
+            style="@style/Widget.Shrine.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/shr_hint_password"
@@ -66,6 +68,7 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/next_button"
+                style="@style/Widget.Shrine.Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
@@ -74,7 +77,7 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/cancel_button"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
+                style="@style/Widget.Shrine.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="12dp"
