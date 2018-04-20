@@ -1,0 +1,27 @@
+#!/bin/bash
+set -e
+
+git fetch
+
+git checkout 101-starter
+git reset --hard origin/101-starter
+git checkout 101-complete
+git reset --hard origin/101-complete
+git checkout 102-starter
+git reset --hard origin/102-starter
+git checkout 102-complete
+git reset --hard origin/102-complete
+git checkout 103-starter
+git reset --hard origin/103-starter
+git checkout 103-complete
+git reset --hard origin/103-complete
+git checkout 104-starter
+git reset --hard origin/104-starter
+git checkout 104-complete
+git reset --hard origin/104-complete
+git checkout 111-starter
+git reset --hard origin/111-starter
+git checkout 111-complete
+git reset --hard origin/111-complete
+git checkout master
+git reset --hard origin/master

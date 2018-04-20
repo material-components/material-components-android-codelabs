@@ -1,0 +1,20 @@
+#!/bin/bash
+set -e
+
+read -p "This overrides the code backing all the codelabs. Are you sure you want to push to origin? (y/n) " -n 1 -r
+echo    # (optional) move to a new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    # Make tags for original codelab start and end points
+    git push origin --force 101-starter
+    git push origin --force 101-complete
+    git push origin --force 102-starter
+    git push origin --force 102-complete
+    git push origin --force 103-starter
+    git push origin --force 103-complete
+    git push origin --force 104-starter
+    git push origin --force 104-complete
+    git push origin --force 111-starter
+    git push origin --force 111-complete
+    git push origin --force master
+fi

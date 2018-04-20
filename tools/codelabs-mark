@@ -1,0 +1,15 @@
+#!/bin/bash
+set -e
+
+# Make tags for original codelab start and end points
+git tag 101-starter-orig 101-starter 
+git tag 101-complete-orig 101-complete
+git tag 102-starter-orig 102-starter 
+git tag 102-complete-orig 102-complete
+git tag 103-starter-orig 103-starter 
+git tag 103-complete-orig 103-complete
+git tag 104-starter-orig 104-starter 
+git tag 104-complete-orig 104-complete
+git tag 111-starter-orig 111-starter
+git tag 111-complete-orig 111-complete
+git tag master-orig master

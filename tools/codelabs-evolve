@@ -1,0 +1,26 @@
+#!/bin/bash
+set -e
+
+# Rebase everything over
+git rebase --onto 101-starter 101-starter-orig 101-complete
+git rebase --onto 101-complete 101-complete-orig 102-starter
+git rebase --onto 102-starter 102-starter-orig 102-complete
+git rebase --onto 102-complete 102-complete-orig 103-starter
+git rebase --onto 103-starter 103-starter-orig 103-complete
+git rebase --onto 103-complete 103-complete-orig 104-starter
+git rebase --onto 104-starter 104-starter-orig 104-complete
+git rebase --onto 104-complete 104-complete-orig master
+git rebase --onto 111-starter 111-starter-orig 111-complete
+
+# Delete tags
+git tag -d 101-starter-orig 
+git tag -d 101-complete-orig
+git tag -d 102-starter-orig
+git tag -d 102-complete-orig
+git tag -d 103-starter-orig 
+git tag -d 103-complete-orig
+git tag -d 104-starter-orig 
+git tag -d 104-complete-orig
+git tag -d 111-starter-orig
+git tag -d 111-complete-orig
+git tag -d master-orig
