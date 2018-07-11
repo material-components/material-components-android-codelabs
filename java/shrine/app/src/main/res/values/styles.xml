@@ -11,7 +11,7 @@
         <item name="android:textColorPrimary">@color/textColorPrimary</item>
     </style>
 
-    <style name="Widget.Shrine.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlineBox">
+    <style name="Widget.Shrine.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="hintTextAppearance">@style/TextAppearance.Shrine.TextInputLayout.HintText</item>
         <item name="android:paddingBottom">8dp</item>
     </style>
