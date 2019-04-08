@@ -19,4 +19,5 @@
     <string name="shr_bottoms_label">Bottoms</string>
     <string name="shr_dresses_label">Dresses</string>
     <string name="shr_account_label">My Account</string>
+    <string name="shr_logo_content_description">Shrine Logo</string>
 </resources>

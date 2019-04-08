@@ -1,8 +1,7 @@
 package com.google.codelabs.mdc.kotlin.shrine.application
 
 import android.app.Application
-import android.content.Context
-import android.support.v7.app.AppCompatDelegate
+import androidx.appcompat.app.AppCompatDelegate
 
 class ShrineApplication : Application() {
     companion object {
