@@ -1,7 +1,7 @@
 package com.google.codelabs.mdc.kotlin.shipping
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 
 class ShippingInfoActivity : AppCompatActivity() {
 
