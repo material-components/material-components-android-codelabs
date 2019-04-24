@@ -5,11 +5,11 @@ import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.Nullable;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.animation.Interpolator;
 import android.widget.ImageView;
+import androidx.annotation.Nullable;
 
 /**
  * {@link android.view.View.OnClickListener} used to translate the product grid sheet downward on
