@@ -2,7 +2,7 @@ package com.google.codelabs.mdc.java.shrine.application;
 
 import android.app.Application;
 import android.content.Context;
-import android.support.v7.app.AppCompatDelegate;
+import androidx.appcompat.app.AppCompatDelegate;
 
 public class ShrineApplication extends Application {
     private static ShrineApplication instance;

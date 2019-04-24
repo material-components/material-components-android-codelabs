@@ -1,6 +1,6 @@
 package com.google.codelabs.mdc.java.shrine;
 
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 
 /**
  * A host (typically an {@code Activity}} that can display fragments and knows how to respond to
