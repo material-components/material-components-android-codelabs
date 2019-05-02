@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#E0E0E0</color>
+    <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#DADCE0</color>
-    <color name="colorAccent">#6200EE</color>
+    <color name="colorAccent">#E0E0E0</color>
     <color name="toolbarIconColor">#FFFFFF</color>
     <color name="loginPageBackgroundColor">#FFFFFF</color>
     <color name="productGridBackgroundColor">#FFFFFF</color>
