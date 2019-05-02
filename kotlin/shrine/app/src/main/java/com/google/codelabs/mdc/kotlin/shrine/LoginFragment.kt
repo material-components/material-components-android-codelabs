@@ -17,7 +17,8 @@ class LoginFragment : Fragment() {
 
         // Snippet from "Navigate to the next Fragment" section goes here.
 
-        return inflater.inflate(R.layout.shr_login_fragment, container, false)
+        val view = inflater.inflate(R.layout.shr_login_fragment, container, false)
+        return view
     }
 
     // "isPasswordValid" from "Navigate to the next Fragment" section method goes here
