@@ -1,7 +1,10 @@
 #!/bin/bash
 set -e
 
-read -p "This overrides the code backing all the codelabs. Are you sure you want to push to origin? (y/n) " -n 1 -r
+# TODO: Add check to ensure the hash of each origin branch matches what we have locally to help ensure changes aren't being overwritten.
+
+echo "This overrides the code backing all the codelabs. Before pushing changes, to ensure you've recently run codelabs-sync and codelabs-evolve."
+read -p "Are you sure you want to push to origin? (y/n) " -n 1 -r
 echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
@@ -17,4 +20,5 @@ then
     git push origin --force 111-starter
     git push origin --force 111-complete
     git push origin --force master
+    git push origin --force common
 fi

@@ -3,25 +3,30 @@ set -e
 
 git fetch
 
-git checkout 101-starter
-git reset --hard origin/101-starter
-git checkout 101-complete
-git reset --hard origin/101-complete
-git checkout 102-starter
-git reset --hard origin/102-starter
-git checkout 102-complete
-git reset --hard origin/102-complete
-git checkout 103-starter
-git reset --hard origin/103-starter
-git checkout 103-complete
-git reset --hard origin/103-complete
-git checkout 104-starter
-git reset --hard origin/104-starter
-git checkout 104-complete
-git reset --hard origin/104-complete
-git checkout 111-starter
-git reset --hard origin/111-starter
-git checkout 111-complete
-git reset --hard origin/111-complete
-git checkout master
-git reset --hard origin/master
+read -p "This will reset all branches to match what is on origin. You could lose work that hasn't been pushed to github. Proceed? (y/n) " -n 1 -r
+echo    # (optional) move to a new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    git checkout 101-starter
+    git rebase -X ours origin/101-starter
+    git checkout 101-complete
+    git rebase -X ours origin/101-complete
+    git checkout 102-starter
+    git rebase -X ours origin/102-starter
+    git checkout 102-complete
+    git rebase -X ours origin/102-complete
+    git checkout 103-starter
+    git rebase -X ours origin/103-starter
+    git checkout 103-complete
+    git rebase -X ours origin/103-complete
+    git checkout 104-starter
+    git rebase -X ours origin/104-starter
+    git checkout 104-complete
+    git rebase -X ours origin/104-complete
+    git checkout 111-starter
+    git rebase -X ours origin/111-starter
+    git checkout 111-complete
+    git rebase -X ours origin/111-complete
+    git checkout master
+    git rebase -X ours origin/master
+fi

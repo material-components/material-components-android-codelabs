@@ -1,26 +1,43 @@
 #!/bin/bash
 set -e
 
-# Rebase everything over
-git rebase --onto 101-starter 101-starter-orig 101-complete
-git rebase --onto 101-complete 101-complete-orig 102-starter
-git rebase --onto 102-starter 102-starter-orig 102-complete
-git rebase --onto 102-complete 102-complete-orig 103-starter
-git rebase --onto 103-starter 103-starter-orig 103-complete
-git rebase --onto 103-complete 103-complete-orig 104-starter
-git rebase --onto 104-starter 104-starter-orig 104-complete
-git rebase --onto 104-complete 104-complete-orig master
-git rebase --onto 111-starter 111-starter-orig 111-complete
+CURRENT_BRANCH=`git branch | grep \* | cut -d ' ' -f2`
+CURRENT_CODELAB=`echo $CURRENT_BRANCH | cut -d "-" -f1`
+PREVIOUS_CODELAB=`echo "$CURRENT_CODELAB - 1" | bc`
+NEXT_CODELAB=`echo "$CURRENT_CODELAB + 1" | bc`
 
-# Delete tags
-git tag -d 101-starter-orig 
-git tag -d 101-complete-orig
-git tag -d 102-starter-orig
-git tag -d 102-complete-orig
-git tag -d 103-starter-orig 
-git tag -d 103-complete-orig
-git tag -d 104-starter-orig 
-git tag -d 104-complete-orig
-git tag -d 111-starter-orig
-git tag -d 111-complete-orig
-git tag -d master-orig
+function nextBranch() {
+	if [[ $CURRENT_BRANCH == "common" ]]; then
+		NEXT_BRANCH="101-starter"
+	elif [[ $CURRENT_BRANCH == "104-complete" ]]; then
+		NEXT_BRANCH="master"
+	elif [[ $CURRENT_BRANCH == "111-complete" ]]; then
+		NEXT_BRANCH=""
+	elif [[ $CURRENT_BRANCH == *-starter ]]; then
+		NEXT_BRANCH="$CURRENT_CODELAB-complete"
+	elif [[ $CURRENT_BRANCH == *-complete ]]; then
+		NEXT_BRANCH="$NEXT_CODELAB-starter"
+	fi
+}
+
+function rebaseNext() {
+# Calculate the next branch. If we just did 104-complete, switch over to 111.
+	if [ "$CURRENT_BRANCH" == "master" ]; then
+		NEXT_BRANCH="111-starter"
+		CURRENT_BRANCH="common"
+	else
+		nextBranch
+	fi
+
+	if [ "$NEXT_BRANCH" != "" ]; then
+		git checkout $NEXT_BRANCH
+		git rebase -X ours -i $CURRENT_BRANCH
+		git diff $NEXT_BRANCH origin/$NEXT_BRANCH
+		echo "Moved $NEXT_BRANCH onto $CURRENT_BRANCH. Make sure everything looks good and then run this script again."
+		echo "If you are just moving this commit (you didn't make any changes to $NEXT_BRANCH) and something looks wrong, you can try again by running: git reset $NEXT_BRANCH origin/$NEXT_BRANCH && git checkout $CURRENT_BRANCH"
+	else
+		echo "Done"
+	fi
+}
+
+rebaseNext
